@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A1B57D01725A66600F6C580 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1B57CF1725A66600F6C580 /* MapKit.framework */; };
 		3A32C894170A4F5B008FBEEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A32C893170A4F5B008FBEEB /* UIKit.framework */; };
 		3A32C896170A4F5B008FBEEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A32C895170A4F5B008FBEEB /* Foundation.framework */; };
 		3A32C898170A4F5B008FBEEB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A32C897170A4F5B008FBEEB /* CoreGraphics.framework */; };
@@ -22,14 +21,16 @@
 		3A32C8B3170A4F5B008FBEEB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A32C8B2170A4F5B008FBEEB /* DetailViewController.m */; };
 		3A32C8BA170A4FCC008FBEEB /* arepa.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3A32C8B9170A4FCC008FBEEB /* arepa.jpeg */; };
 		3A391E4B1717BDC90077266E /* cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A391E4A1717BDC90077266E /* cards.png */; };
+		3A413D361725AB7A00F00B1A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A413D351725AB7A00F00B1A /* MapKit.framework */; };
+		3A413D391725B6F200F00B1A /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A413D381725B6F200F00B1A /* MapPin.m */; };
 		3A6C35C4171CC3C600B35EB8 /* indian-food.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C35C3171CC3C600B35EB8 /* indian-food.jpg */; };
 		3A6C35C6171CC5FB00B35EB8 /* ThaiFood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C35C5171CC5FB00B35EB8 /* ThaiFood.jpg */; };
+		3AA61CC71725E770002ED98C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA61CC61725E770002ED98C /* MapViewController.m */; };
 		3AB7E4DE170D308A00E5A188 /* 5537450508_6354028ee7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7E4DD170D308A00E5A188 /* 5537450508_6354028ee7.jpg */; };
 		3AF1B8C917139EA100C1EA91 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1B8C817139EA100C1EA91 /* Restaurant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A1B57CF1725A66600F6C580 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3A32C890170A4F5B008FBEEB /* Assignment1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A32C893170A4F5B008FBEEB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3A32C895170A4F5B008FBEEB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,8 +51,13 @@
 		3A32C8B2170A4F5B008FBEEB /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		3A32C8B9170A4FCC008FBEEB /* arepa.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = arepa.jpeg; sourceTree = "<group>"; };
 		3A391E4A1717BDC90077266E /* cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cards.png; sourceTree = "<group>"; };
+		3A413D351725AB7A00F00B1A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3A413D371725B6F200F00B1A /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
+		3A413D381725B6F200F00B1A /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
 		3A6C35C3171CC3C600B35EB8 /* indian-food.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "indian-food.jpg"; sourceTree = "<group>"; };
 		3A6C35C5171CC5FB00B35EB8 /* ThaiFood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ThaiFood.jpg; sourceTree = "<group>"; };
+		3AA61CC51725E770002ED98C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		3AA61CC61725E770002ED98C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		3AB7E4DD170D308A00E5A188 /* 5537450508_6354028ee7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5537450508_6354028ee7.jpg; sourceTree = "<group>"; };
 		3AF1B8C717139EA100C1EA91 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
 		3AF1B8C817139EA100C1EA91 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
@@ -62,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A1B57D01725A66600F6C580 /* MapKit.framework in Frameworks */,
+				3A413D361725AB7A00F00B1A /* MapKit.framework in Frameworks */,
 				3A32C894170A4F5B008FBEEB /* UIKit.framework in Frameworks */,
 				3A32C896170A4F5B008FBEEB /* Foundation.framework in Frameworks */,
 				3A32C898170A4F5B008FBEEB /* CoreGraphics.framework in Frameworks */,
@@ -92,7 +98,7 @@
 		3A32C892170A4F5B008FBEEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3A1B57CF1725A66600F6C580 /* MapKit.framework */,
+				3A413D351725AB7A00F00B1A /* MapKit.framework */,
 				3A32C893170A4F5B008FBEEB /* UIKit.framework */,
 				3A32C895170A4F5B008FBEEB /* Foundation.framework */,
 				3A32C897170A4F5B008FBEEB /* CoreGraphics.framework */,
@@ -111,12 +117,16 @@
 				3A6C35C5171CC5FB00B35EB8 /* ThaiFood.jpg */,
 				3A32C8A3170A4F5B008FBEEB /* AppDelegate.m */,
 				3A32C8AB170A4F5B008FBEEB /* MainStoryboard.storyboard */,
+				3AA61CC51725E770002ED98C /* MapViewController.h */,
+				3AA61CC61725E770002ED98C /* MapViewController.m */,
 				3A32C8AE170A4F5B008FBEEB /* MasterViewController.h */,
 				3A32C8AF170A4F5B008FBEEB /* MasterViewController.m */,
 				3A32C8B1170A4F5B008FBEEB /* DetailViewController.h */,
 				3A32C8B2170A4F5B008FBEEB /* DetailViewController.m */,
 				3AF1B8C717139EA100C1EA91 /* Restaurant.h */,
 				3AF1B8C817139EA100C1EA91 /* Restaurant.m */,
+				3A413D371725B6F200F00B1A /* MapPin.h */,
+				3A413D381725B6F200F00B1A /* MapPin.m */,
 				3A32C89A170A4F5B008FBEEB /* Supporting Files */,
 			);
 			path = Assignment1;
@@ -212,6 +222,8 @@
 				3A32C8B0170A4F5B008FBEEB /* MasterViewController.m in Sources */,
 				3A32C8B3170A4F5B008FBEEB /* DetailViewController.m in Sources */,
 				3AF1B8C917139EA100C1EA91 /* Restaurant.m in Sources */,
+				3A413D391725B6F200F00B1A /* MapPin.m in Sources */,
+				3AA61CC71725E770002ED98C /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +312,7 @@
 				GCC_PREFIX_HEADER = "Assignment1/Assignment1-Prefix.pch";
 				INFOPLIST_FILE = "Assignment1/Assignment1-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos7.1;
+				SDKROOT = iphoneos6.1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -312,7 +324,7 @@
 				GCC_PREFIX_HEADER = "Assignment1/Assignment1-Prefix.pch";
 				INFOPLIST_FILE = "Assignment1/Assignment1-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos7.1;
+				SDKROOT = iphoneos6.1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

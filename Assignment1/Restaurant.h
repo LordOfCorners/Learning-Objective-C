@@ -21,4 +21,8 @@
 @property NSString* imageFileName;
 -(float) priceOfDinnerForGuests;
 
+//map stuff
+@property float longitude, latitude;
+
+
 @end

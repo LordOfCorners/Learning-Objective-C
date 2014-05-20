@@ -8,35 +8,15 @@
 
 #import "DetailViewController.h"
 
+
 @interface DetailViewController ()
 - (void)configureView;
-@end
-
-@implementation AddressAnnotation
-
-@synthesize coordinate;
-
-- (NSString *)subtitle
-{
-   return @"Sub Title";
-}
-- (NSString *)title
-{
-    return @"Title";
-}
-
--(id)initWithCoordinate:(CLLocationCoordinate2D) c
-{
-    coordinate=c;
-    NSLog(@"%f,%f",c.latitude,c.longitude);
-    return self;
-}
 
 @end
-
-
 
 @implementation DetailViewController
+
+
 
 #pragma mark - Managing the detail item
 
@@ -67,16 +47,18 @@ int numberOfPeople;
     // %f means replace f with the first thing that comes after it. The .2 restricts the number to two decimal places.
     */
     
-    Restaurant* seva = [Restaurant new];
-    seva.restaurantTitle = @"Seva";
-    seva.cuisineType = @"Indian";
-    seva.entreePrice = 14.00;
-    seva.appetizerPrice = 7.00;
-    seva.dessertPrice = 5.00;
-    seva.winePrice = 29.00;
-    seva.numberOfPeople = numberOfPeople;
-    seva.creditCards = YES;
-    seva.imageFileName = @"indian-food.jpg";
+    self.seva = [Restaurant new];
+    self.seva.restaurantTitle = @"Seva";
+    self.seva.cuisineType = @"Indian";
+    self.seva.entreePrice = 14.00;
+    self.seva.appetizerPrice = 7.00;
+    self.seva.dessertPrice = 5.00;
+    self.seva.winePrice = 29.00;
+    self.seva.numberOfPeople = numberOfPeople;
+    self.seva.creditCards = YES;
+    self.seva.imageFileName = @"indian-food.jpg";
+    self.seva.latitude = 40.765266;
+    self.seva.longitude = -73.919492;
     
     Restaurant* caracas = [Restaurant new];
     caracas.restaurantTitle = @"Caracas";
@@ -102,25 +84,42 @@ int numberOfPeople;
     chaoThai.imageFileName = @"ThaiFood.jpg";
     
     
-//    [self displayReceipt: seva];
+    [self displayReceipt: self.seva];
+
 }
 
 
 
 - (IBAction)pressButton:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:7186264440"]];
 
-    [UIView beginAnimations:@"fadeOut" context:nil];
-    [UIView setAnimationDuration:2];
-    self.mainImageView.alpha *=0.05;
-    [UIView commitAnimations];
 }
 
 - (IBAction)enlargeImage:(id)sender {
-//    [UIView beginAnimations:@"fadeOut" context:nil];
-//    [UIView setAnimationDuration:2];
+    
+    if(self.enlargeToggle==FALSE){
+        self.previous = self.mainImageView.frame;
+
+
+    [UIView beginAnimations:@"fadeOut" context:nil];
+    [UIView setAnimationDuration:2];
+    self.creditCardView.hidden = TRUE;
     [self.mainImageView setFrame:self.view.frame];
 
-//    [UIView commitAnimations];
+    [UIView commitAnimations];
+        self.enlargeToggle=TRUE;
+    }
+    else if(self.enlargeToggle==TRUE){
+        [UIView beginAnimations:@"fadeOut" context:nil];
+        [UIView setAnimationDuration:2];
+        [self.mainImageView setFrame:self.previous];
+        self.creditCardView.hidden = FALSE;
+        [UIView commitAnimations];
+        self.enlargeToggle=FALSE;
+
+
+    }
+    
 }
 
 - (IBAction)stepperValueChanged:(id)sender
@@ -130,36 +129,6 @@ int numberOfPeople;
     NSLog(@"%.f", stepperValue);
     numberOfPeople=stepperValue;
     [self configureView];
-}
-
-- (IBAction) showAddress
-{
-    
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    span.latitudeDelta=0.2;
-    span.longitudeDelta=0.2;
-    
-    CLLocationCoordinate2D location = self.mapView.userLocation.coordinate;
-    
-    location.latitude = 38.898748 ;
-    location.longitude = -77.037684;
-    region.span=span;
-    region.center=location;
-    
-    if(self.addAnnotation != nil)
-    {
-        [self.mapView removeAnnotation:self.addAnnotation];
-       // [self.addAnnotation release];
-        self.addAnnotation = nil;
-    }
-    
-    self.addAnnotation = [[AddressAnnotation alloc] initWithCoordinate:location];
-    [mapView addAnnotation:addAnnotation];
-    
-    [mapView setRegion:region animated:TRUE];
-    [mapView regionThatFits:region];
-    //[mapView selectAnnotation:mLodgeAnnotation animated:YES];
 }
 
 -(void) displayReceipt:(Restaurant *) myRestaurant{
@@ -179,9 +148,7 @@ int numberOfPeople;
     self.mainImageView.image = [UIImage imageNamed:myRestaurant.imageFileName];
 }
 
--(void) displayMap:(Restaurant *) myRestaurant{
-    
-}
+
 
 
 
@@ -196,6 +163,7 @@ int numberOfPeople;
     self.stepperValueLabel.text = [NSString stringWithFormat:@"%.f", self.peopleStepper.value];
     
     [self configureView];
+    
 }
 
 - (void)didReceiveMemoryWarning
