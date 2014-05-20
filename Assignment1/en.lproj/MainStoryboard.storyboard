@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="11">
+            <objects>
+                <navigationController id="3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="12" kind="relationship" relationship="rootViewController" id="19"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1" y="64"/>
+        </scene>
+        <!--Master View Controller - Master-->
+        <scene sceneID="18">
+            <objects>
+                <tableViewController storyboardIdentifier="" title="Master" id="12" customClass="MasterViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="phq-AM-6qj" style="IBUITableViewCellStyleDefault" id="lJ0-d7-vTF">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="phq-AM-6qj">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="21" kind="push" identifier="showDetail" id="jZb-fq-zAk"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="12" id="16"/>
+                            <outlet property="delegate" destination="12" id="15"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Restaurants" id="36"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="64"/>
+        </scene>
+        <!--Detail View Controller - Detail-->
+        <scene sceneID="24">
+            <objects>
+                <viewController storyboardIdentifier="" title="Detail" id="21" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="22">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="5537450508_6354028ee7.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="RvJ-us-Wdf">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="327" id="K3X-5O-nIf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFill" image="arepa.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="FW0-EI-ekL">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="171" id="1n1-NE-0Hq"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="HQh-XK-PxH" appends="YES" id="kXg-30-Na5"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="cards.png" translatesAutoresizingMaskIntoConstraints="NO" id="v3C-9k-zuL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="5mf-Hi-N8Y"/>
+                                    <constraint firstAttribute="width" constant="153" id="RfG-03-B0v"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Grand Total]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xkz-3W-4g7" userLabel="totalDinnerPrice">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of People" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91s-Dm-MVa">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="J37-8q-F3F"/>
+                                    <constraint firstAttribute="width" constant="138" id="TIC-AR-2yW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Entrees]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hce-SM-2bU">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="VXm-qN-Fsf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Appetizers]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rST-9v-kcA">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Desserts]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyq-co-olO">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Wine]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJQ-tM-NlC">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Subtotal]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOw-wl-dzi">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Tax]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btv-3H-XeV">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Tip]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipT-Sc-sTc">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Grand Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJn-Vn-EVM" userLabel="totalDinnerPrice">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Entrees:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ni3-0z-VRq">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Appetizers:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSt-hJ-QxW">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cuisine" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdr-NY-wMB">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="234" id="eZF-5P-xDV"/>
+                                    <constraint firstAttribute="height" constant="28" id="j5a-ry-oYK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Desserts:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCH-9K-kbF">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Wine:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9u-s4-8RD">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Subtotal:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxA-xh-sf1">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tax (8.875%):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDw-5W-PbO">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Gratuity (20%):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGQ-eV-tJo">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="WGd-nD-WIg">
+                                <connections>
+                                    <action selector="stepperValueChanged:" destination="21" eventType="valueChanged" id="uh3-aT-xTm"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHF-ID-2IM">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk3-lE-YUy">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Do Something">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressButton:" destination="21" eventType="touchUpInside" id="06q-uR-oOW"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sJB-Ii-bhN"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JJQ-tM-NlC" firstAttribute="trailing" secondItem="fyq-co-olO" secondAttribute="trailing" type="default" id="0wC-WN-csc"/>
+                            <constraint firstItem="sJB-Ii-bhN" firstAttribute="bottom" secondItem="22" secondAttribute="bottom" type="default" id="0z6-f5-9bC"/>
+                            <constraint firstItem="RvJ-us-Wdf" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="1Gs-zT-p9A"/>
+                            <constraint firstAttribute="bottom" secondItem="rST-9v-kcA" secondAttribute="bottom" constant="160" id="2OE-8C-XS8"/>
+                            <constraint firstItem="btv-3H-XeV" firstAttribute="trailing" secondItem="ipT-Sc-sTc" secondAttribute="trailing" type="default" id="3my-mZ-CU7"/>
+                            <constraint firstItem="GHF-ID-2IM" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="115" id="5Bo-uY-Jsy"/>
+                            <constraint firstItem="GCH-9K-kbF" firstAttribute="baseline" secondItem="fyq-co-olO" secondAttribute="baseline" type="default" id="5PM-UM-mn3"/>
+                            <constraint firstItem="GHF-ID-2IM" firstAttribute="centerY" secondItem="WGd-nD-WIg" secondAttribute="centerY" type="default" id="7ch-nd-sOc"/>
+                            <constraint firstItem="Bdr-NY-wMB" firstAttribute="top" secondItem="v3C-9k-zuL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8xL-8C-997"/>
+                            <constraint firstItem="GDw-5W-PbO" firstAttribute="baseline" secondItem="btv-3H-XeV" secondAttribute="baseline" type="default" id="AFq-Sb-NFB"/>
+                            <constraint firstItem="mOw-wl-dzi" firstAttribute="trailing" secondItem="JJQ-tM-NlC" secondAttribute="trailing" type="default" id="BIv-Gh-n83"/>
+                            <constraint firstAttribute="bottom" secondItem="GDw-5W-PbO" secondAttribute="bottom" constant="59" id="C5R-NP-baF"/>
+                            <constraint firstAttribute="bottom" secondItem="mGQ-eV-tJo" secondAttribute="bottom" constant="39" id="DSG-DQ-wPr"/>
+                            <constraint firstItem="ni3-0z-VRq" firstAttribute="baseline" secondItem="hce-SM-2bU" secondAttribute="baseline" type="default" id="E7u-5S-D2n"/>
+                            <constraint firstItem="k9u-s4-8RD" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Esm-vn-whl"/>
+                            <constraint firstItem="btv-3H-XeV" firstAttribute="trailing" secondItem="mOw-wl-dzi" secondAttribute="trailing" type="default" id="G3A-yv-jde"/>
+                            <constraint firstItem="ipT-Sc-sTc" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="GEy-LN-zPt"/>
+                            <constraint firstItem="v3C-9k-zuL" firstAttribute="top" secondItem="22" secondAttribute="top" constant="148" id="HZw-4X-pks"/>
+                            <constraint firstItem="RSt-hJ-QxW" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Hdd-Sy-j0N"/>
+                            <constraint firstItem="hce-SM-2bU" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Lsb-yk-Ng9"/>
+                            <constraint firstItem="GDw-5W-PbO" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="MT7-FN-B5V"/>
+                            <constraint firstItem="91s-Dm-MVa" firstAttribute="top" secondItem="22" secondAttribute="top" constant="224" id="NP6-yb-O0U"/>
+                            <constraint firstItem="Bdr-NY-wMB" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NVN-q5-g3b"/>
+                            <constraint firstAttribute="bottom" secondItem="ni3-0z-VRq" secondAttribute="bottom" constant="181" id="PTp-f8-rVC"/>
+                            <constraint firstAttribute="bottom" secondItem="k9u-s4-8RD" secondAttribute="bottom" constant="117" id="Pap-zp-APr"/>
+                            <constraint firstItem="JJQ-tM-NlC" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Q3b-nP-FWV"/>
+                            <constraint firstItem="IxA-xh-sf1" firstAttribute="baseline" secondItem="mOw-wl-dzi" secondAttribute="baseline" type="default" id="Q4z-kk-uB1"/>
+                            <constraint firstItem="Xkz-3W-4g7" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QSy-gX-pwp"/>
+                            <constraint firstItem="RvJ-us-Wdf" firstAttribute="bottom" secondItem="22" secondAttribute="bottom" type="default" id="U1V-at-o00"/>
+                            <constraint firstAttribute="bottom" secondItem="IxA-xh-sf1" secondAttribute="bottom" constant="80" id="Wgi-uy-G2g"/>
+                            <constraint firstItem="FW0-EI-ekL" firstAttribute="top" secondItem="22" secondAttribute="top" type="default" id="XeP-4q-Mw2"/>
+                            <constraint firstItem="IxA-xh-sf1" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YSC-j5-Gxu"/>
+                            <constraint firstItem="fyq-co-olO" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Yz3-vb-EVv"/>
+                            <constraint firstItem="RvJ-us-Wdf" firstAttribute="top" secondItem="22" secondAttribute="top" type="default" id="ZLC-At-bZN"/>
+                            <constraint firstItem="mGQ-eV-tJo" firstAttribute="baseline" secondItem="ipT-Sc-sTc" secondAttribute="baseline" type="default" id="Zt6-Vt-Lgs"/>
+                            <constraint firstAttribute="bottom" secondItem="gJn-Vn-EVM" secondAttribute="bottom" constant="6" id="aGR-OS-Smg"/>
+                            <constraint firstItem="ni3-0z-VRq" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="b75-Jf-Emi"/>
+                            <constraint firstItem="FW0-EI-ekL" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="bKY-0u-nZW"/>
+                            <constraint firstItem="GCH-9K-kbF" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dyu-0Y-R9Y"/>
+                            <constraint firstItem="WGd-nD-WIg" firstAttribute="top" secondItem="91s-Dm-MVa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fEu-93-qQB"/>
+                            <constraint firstItem="rST-9v-kcA" firstAttribute="trailing" secondItem="hce-SM-2bU" secondAttribute="trailing" type="default" id="g3G-2W-o2S"/>
+                            <constraint firstItem="fyq-co-olO" firstAttribute="trailing" secondItem="rST-9v-kcA" secondAttribute="trailing" type="default" id="gds-Ap-ful"/>
+                            <constraint firstItem="btv-3H-XeV" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="h7M-8m-lTt"/>
+                            <constraint firstItem="GDw-5W-PbO" firstAttribute="trailing" secondItem="gJn-Vn-EVM" secondAttribute="trailing" type="default" id="iq7-Gx-xuu"/>
+                            <constraint firstItem="sJB-Ii-bhN" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="jq0-gd-ZpS"/>
+                            <constraint firstItem="mGQ-eV-tJo" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lAO-jF-Nq3"/>
+                            <constraint firstAttribute="trailing" secondItem="v3C-9k-zuL" secondAttribute="trailing" constant="6" id="pkQ-8U-NCQ"/>
+                            <constraint firstItem="WGd-nD-WIg" firstAttribute="centerX" secondItem="RSt-hJ-QxW" secondAttribute="centerX" type="default" id="poT-BA-tEP"/>
+                            <constraint firstItem="k9u-s4-8RD" firstAttribute="baseline" secondItem="JJQ-tM-NlC" secondAttribute="baseline" type="default" id="qZl-xN-U6J"/>
+                            <constraint firstAttribute="bottom" secondItem="RSt-hJ-QxW" secondAttribute="bottom" constant="159" id="qjx-RE-hPB"/>
+                            <constraint firstItem="gJn-Vn-EVM" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ryI-i9-P0e"/>
+                            <constraint firstItem="rST-9v-kcA" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tMM-DD-ccE"/>
+                            <constraint firstItem="91s-Dm-MVa" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tWN-0t-F2o"/>
+                            <constraint firstItem="gJn-Vn-EVM" firstAttribute="baseline" secondItem="Xkz-3W-4g7" secondAttribute="baseline" type="default" id="trK-Kn-1iu"/>
+                            <constraint firstItem="sJB-Ii-bhN" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" type="default" id="wUN-bW-0T1"/>
+                            <constraint firstItem="dk3-lE-YUy" firstAttribute="baseline" secondItem="GHF-ID-2IM" secondAttribute="baseline" type="default" id="xP7-d3-2GZ"/>
+                            <constraint firstItem="mOw-wl-dzi" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xWg-R5-i3V"/>
+                            <constraint firstAttribute="bottom" secondItem="GCH-9K-kbF" secondAttribute="bottom" constant="138" id="yLv-QH-2PW"/>
+                            <constraint firstAttribute="trailing" secondItem="dk3-lE-YUy" secondAttribute="trailing" constant="12" id="yoa-oq-Rzq"/>
+                            <constraint firstItem="sJB-Ii-bhN" firstAttribute="top" secondItem="22" secondAttribute="top" type="default" id="yqg-UT-Nxg"/>
+                            <constraint firstItem="FW0-EI-ekL" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" type="default" id="zTs-NY-0va"/>
+                            <constraint firstItem="Xkz-3W-4g7" firstAttribute="trailing" secondItem="ipT-Sc-sTc" secondAttribute="trailing" type="default" id="zsp-Iw-FgS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Restaurant Title" id="26"/>
+                    <connections>
+                        <outlet property="appetizerLabel" destination="rST-9v-kcA" id="UwF-aZ-rZn"/>
+                        <outlet property="creditCardView" destination="v3C-9k-zuL" id="IFH-7l-WCP"/>
+                        <outlet property="cuisineLabel" destination="Bdr-NY-wMB" id="upN-vy-7eU"/>
+                        <outlet property="dessertLabel" destination="fyq-co-olO" id="2bX-OZ-Vs8"/>
+                        <outlet property="detailDescriptionLabel" destination="Xkz-3W-4g7" id="2mO-gT-988"/>
+                        <outlet property="entreeLabel" destination="hce-SM-2bU" id="uLl-7W-o62"/>
+                        <outlet property="mainImageView" destination="FW0-EI-ekL" id="zRC-7K-Drj"/>
+                        <outlet property="mapView" destination="sJB-Ii-bhN" id="e1c-Sn-R0n"/>
+                        <outlet property="peopleStepper" destination="WGd-nD-WIg" id="U31-YU-o2h"/>
+                        <outlet property="stepperValueLabel" destination="GHF-ID-2IM" id="oFY-t2-OiX"/>
+                        <outlet property="subtotalLabel" destination="mOw-wl-dzi" id="Ymc-pI-biH"/>
+                        <outlet property="taxLabel" destination="btv-3H-XeV" id="Gem-Gy-SXc"/>
+                        <outlet property="tipLabel" destination="ipT-Sc-sTc" id="No4-cd-geY"/>
+                        <outlet property="wineLabel" destination="JJQ-tM-NlC" id="tb5-Pi-UTA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HQh-XK-PxH">
+                    <connections>
+                        <action selector="enlargeImage:" destination="21" id="An0-34-oy3"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="902" y="64"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="5537450508_6354028ee7.jpg" width="333" height="500"/>
+        <image name="arepa.jpeg" width="518" height="324"/>
+        <image name="cards.png" width="250" height="43"/>
+    </resources>
+    <classes>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="enlargeImage:"/>
+                <relationship kind="action" name="pressButton:"/>
+                <relationship kind="action" name="stepperValueChanged:"/>
+                <relationship kind="outlet" name="appetizerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="creditCardView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cuisineLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dessertLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="entreeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mainImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="peopleStepper" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="stepperValueLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subtotalLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="taxLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tipLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wineLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
